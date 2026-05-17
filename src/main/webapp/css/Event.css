@@ -1,0 +1,455 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Navbar Section --- */
+.custom-nav {
+    background-color: #7d3c00 !important; /* ပုံထဲက အညိုရောင် */
+    padding: 12px 0;
+    z-index: 1050; /* အခြား element များအပေါ်တွင်ရှိရန် */
+}
+
+.navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+    color: white !important;
+}
+
+.custom-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    padding: 8px 22px !important;
+    margin-left: 5px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+/* Active Link ကို ခလုတ်ပုံစံပြုလုပ်ခြင်း */
+.custom-nav .nav-link.active {
+    background-color: #b35900 !important;
+    border-radius: 10px;
+    color: white !important;
+    font-weight: 500;
+}
+
+.custom-nav .nav-link:hover:not(.active) {
+    color: #ffcc99 !important;
+}
+
+.EventsBody {
+    background-color: #FDF6E3; /* Cream background */
+}
+
+.events-main-title {
+    color: #5D2E00;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.event-category-title {
+    color: #713101;
+    font-weight: 600;
+    border-bottom: 2px solid #C05E12;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Card Styling */
+.event-card {
+    background: #FFF9E9; /* ပုံပါအတိုင်း အဝါဖျော့ရောင် Card background */
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    transition: transform 0.3s ease;
+    border: none;
+    position: relative; /* Admin actions တွေ နေရာမှန်ဖို့ လိုအပ်ပါတယ် */
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+}
+
+.event-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.event-date {
+    color: #C05E12;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.event-name {
+    color: #713101;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.event-desc {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+/* Badges & Buttons */
+.badge-completed {
+    background-color: #FEEBC8; /* အဝါဖျော့ */
+    color: #C05E12;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.btn-register {
+    background-color: #2ECC71; /* အစိမ်းရောင် Button */
+    color: white;
+    border-radius: 20px;
+    padding: 6px 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-register:hover {
+    background-color: #27AE60;
+    color: white;
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .events-main-title { font-size: 2.2rem; }
+    .event-img { height: 180px; }
+}
+
+
+/* Modal UI Styling */
+.modal-content {
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+
+.modal-title {
+    color: #5D2E00;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Event Summary Card */
+.event-summary-card {
+    background-color: #FFF9E9;
+    border-radius: 12px;
+    border: 1px solid #FEF3D2;
+}
+
+.event-title-sm {
+    color: #713101;
+    font-weight: 600;
+}
+
+.text-orange { color: #C05E12; }
+
+/* Form Controls */
+.form-control {
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #C05E12;
+}
+
+.x-small { font-size: 0.75rem; color: #757575; }
+
+/* Info Box */
+.info-box {
+    background-color: #F0F7FF;
+    border-radius: 12px;
+    color: #455A64;
+}
+
+/* Custom Buttons */
+.btn-register-complete {
+    background-color: #C05E12;
+    border: none;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.btn-register-complete:hover {
+    background-color: #9E4D0F;
+}
+
+.btn-outline-warning {
+    border: 1px solid #FFCA28;
+}
+
+
+/* --- Footer Section Styling --- */
+.main-lastblock {
+    background-color: #5d2e00; /* ပုံထဲကအတိုင်း အညိုရောင်ရင့် */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.main-lastblock h4, .main-lastblock h5 {
+    font-family: 'Playfair Display', serif; /* ခေါင်းစဉ်များအတွက် font */
+    color: white;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+    list-style: none; /* List style တွေဖျောက်ထားဖို့ လိုနိုင်ပါတယ် */
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: #ffcc99; /* Mouse တင်ရင် အရောင်ဖျော့သွားစေရန် */
+    padding-left: 5px;
+}
+
+.main-lastblock hr {
+    border-color: white;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .main-lastblock .row {
+        text-align: center; /* ဖုန်းမှာ စာသားများကို အလယ်ပို့ရန် */
+    }
+    .main-lastblock h5 {
+        margin-top: 20px;
+    }
+}
+
+/* --- Admin Specific Style --- */
+
+/* Profile Circle */
+.admin-profile-circle {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.admin-section:hover .admin-profile-circle {
+    background-color: #b35900;
+    border-color: #ffcc99;
+    transform: scale(1.05);
+}
+
+/* Dropdown Menu styling */
+.admin-section .dropdown-menu {
+    border-radius: 12px;
+    margin-top: 15px !important;
+    padding: 10px;
+    border: none;
+}
+
+.admin-section .dropdown-item {
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #5d2e00;
+}
+
+.admin-section .dropdown-item:hover {
+    background-color: #fdf5e6;
+    color: #7d3c00;
+}
+
+/* Dropdown Animation */
+.animate { animation-duration: 0.3s; animation-fill-mode: both; }
+@keyframes slideIn {
+    0% { transform: translateY(1rem); opacity: 0; }
+    100% { transform: translateY(0rem); opacity: 1; }
+}
+.slideIn { animation-name: slideIn; }
+
+/* Hide Default Arrow */
+.dropdown-toggle::after { display: none !important; }
+
+/* Mobile View Adjustments */
+@media (max-width: 991px) {
+    .admin-section {
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .admin-profile-circle { margin: 0 auto; }
+}
+
+/* Admin Controls Floating Button */
+.admin-controls-wrapper {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2000;
+}
+
+.btn-admin-main {
+    background-color: #5d2e00; 
+    color: white;
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-weight: 500;
+    border: 2px solid #ffcc99;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.btn-admin-main:hover, .btn-admin-main:focus {
+    background-color: #c05e12;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Dropdown Menu Styling */
+.admin-dropdown-menu {
+    border-radius: 15px;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px !important;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+}
+
+.admin-dropdown-menu .dropdown-item {
+    border-radius: 8px;
+    font-size: 0.95rem;
+    padding: 10px 15px;
+    transition: 0.2s;
+}
+
+.admin-dropdown-menu .dropdown-item:hover {
+    background-color: #fdf6e3;
+    color: #5d2e00;
+}
+
+/* Custom Modal Styling */
+.custom-modal-style {
+    border-radius: 20px !important;
+    overflow: hidden;
+}
+
+.custom-modal-style .modal-header {
+    background-color: #5d2e00;
+    border-bottom: none;
+}
+
+.custom-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #4a3427;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.custom-input {
+    border: 1px solid #e0d5cb;
+    border-radius: 10px !important;
+    padding: 10px 15px;
+    background-color: #fcfaf8;
+    color: #4a3427;
+}
+
+/* Admin Actions Buttons on Card */
+.admin-actions {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 8px;
+    z-index: 5;
+}
+
+.btn-edit-sm, .btn-delete-sm {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.2s ease;
+}
+
+.btn-edit-sm {
+    background-color: #ffffff;
+    color: #5d2e00;
+}
+
+.btn-delete-sm {
+    background-color: #ff4747;
+    color: white;
+}
+
+/* Modal Headers */
+.header-content-wrapper {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.edit-icon-container {
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.btn-close-white {
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+}
+
+/* Body နဲ့ HTML ကို display အပြည့်ဖြစ်စေရန် */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Page တစ်ခုလုံးကို flex ပုံစံသုံးပြီး footer ကို အောက်ဆုံးပို့ထားမည် */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Event Body က ကျန်တဲ့နေရာလွတ်အားလုံးကို ယူထားမည် */
+.EventsBody {
+    flex: 1 0 auto; /* Content မရှိရင်လည်း နေရာအပြည့်ယူထားပေးသည် */
+    min-height: 50vh; /* ဒါမှမဟုတ် အနည်းဆုံး screen ရဲ့ ထက်ဝက်အထိ နေရာယူထားခိုင်းခြင်း */
+}
+
+/* Footer က အောက်ဆုံးမှာပဲ ကပ်နေမည် */
+.main-lastblock {
+    flex-shrink: 0;
+}

@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Navbar Section --- */
+.custom-nav {
+    background-color: #7d3c00 !important; /* ပုံထဲက အညိုရောင် */
+    padding: 12px 0;
+    z-index: 1050; /* အခြား element များအပေါ်တွင်ရှိရန် */
+}
+
+.navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+}
+
+.custom-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    padding: 8px 22px !important;
+    margin-left: 5px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+/* Active Link ကို ခလုတ်ပုံစံပြုလုပ်ခြင်း */
+.custom-nav .nav-link.active {
+    background-color: #b35900 !important;
+    border-radius: 10px;
+    color: white !important;
+    font-weight: 500;
+}
+
+.custom-nav .nav-link:hover:not(.active) {
+    color: #ffcc99 !important;
+}
+
+/* --- main-block (main-block) --- */
+.main-block {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('../IMG/MainCoffeeBG.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    min-height: 600px;
+}
+
+.hero-content {
+    height: calc(100vh - 70px);
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    text-shadow: 2px 4px 8px rgba(0,0,0,0.6);
+}
+
+.btn-explore {
+    background-color: #d47a00;
+    color: white;
+    padding: 12px 35px;
+    border-radius: 30px;
+    font-weight: 500;
+    border: none;
+    transition: 0.3s ease;
+}
+
+.btn-explore:hover {
+    background-color: #b36600;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* --- Second Section (main-secblock) --- */
+.main-secblock {
+    background-color: #fdf5e6; /* ပုံထဲက Cream အရောင် */
+    padding: 80px 0;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    color: #5d2e00;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #6c757d;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+/* Story Cards ဒီဇိုင်း */
+.story-card {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background: white;
+}
+
+.story-card:hover {
+    transform: translateY(-10px);
+}
+
+.story-card img {
+    height: 220px;
+    object-fit: cover;
+}
+
+.story-card .card-title {
+    color: #5d2e00;
+    font-size: 1.25rem;
+}
+
+/* Stats Banner ဒီဇိုင်း */
+.stats-banner {
+    background-color: #633200; /* ပုံထဲက အညိုရင့်ရောင် */
+    border-radius: 20px;
+    margin-top: 60px;
+}
+
+.stat-item {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* Third Section Styling */
+.main-thirdblock {
+    background-color: #fdf5e6; /* ပုံထဲက Cream အရောင်အတိုင်း */
+}
+
+/* Service Cards */
+.service-card {
+    background: white;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background-color: #fff3e0;
+    color: #7d3c00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+/* Opening Hours Box */
+.hours-container {
+    border-radius: 20px;
+}
+
+.hours-container .section-title {
+    text-align: left;
+}
+
+.hours-container span {
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.hours-container .border-bottom {
+    border-color: #eee !important;
+}
+
+/* Image styling */
+.hours-container img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* --- Fourth Block Section --- */
+.main-Fourthblock {
+    background-color: #fdf5e6; /* အရင်အပိုင်းများအတိုင်း Cream color */
+    padding-bottom: 100px;
+}
+
+/* Visit Us Banner Styling */
+.visit-banner {
+    background-color: #8b4513; /* ပုံထဲက အညိုရောင်ရင့် */
+    border-radius: 20px;
+}
+
+.visit-banner .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+}
+
+/* Custom Warning Button for Directions */
+.btn-warning-custom {
+    background-color: #d47a00;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-warning-custom:hover {
+    background-color: #b36600;
+}
+
+/* Gallery Styling */
+.gallery-item {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* Mouse တင်ရင် ပုံလေး နည်းနည်းကြီးလာစေရန် */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* ပုံတွေ အချိုးအစား မပျက်စေရန် */
+}
+
+/* Responsive adjust for mobile */
+@media (max-width: 576px) {
+    .visit-banner {
+        padding: 30px 15px !important;
+    }
+    .visit-banner .btn {
+        width: 100%; /* ဖုန်းမှာ ခလုတ်တွေကို အပြည့်ထားရန် */
+        margin-bottom: 10px;
+    }
+    .d-flex.gap-3 {
+        flex-direction: column;
+    }
+}
+
+/* --- Footer Section Styling --- */
+.main-lastblock {
+    background-color: #5d2e00; /* ပုံထဲကအတိုင်း အညိုရောင်ရင့် */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.main-lastblock h4, .main-lastblock h5 {
+    font-family: 'Playfair Display', serif; /* ခေါင်းစဉ်များအတွက် font */
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: #ffcc99; /* Mouse တင်ရင် အရောင်ဖျော့သွားစေရန် */
+    padding-left: 5px;
+}
+
+.main-lastblock hr {
+    border-color: white;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .main-lastblock .row {
+        text-align: center; /* ဖုန်းမှာ စာသားများကို အလယ်ပို့ရန် */
+    }
+    .main-lastblock h5 {
+        margin-top: 20px;
+    }
+}
+
+/* Mobile ဖုန်းများအတွက် border ကိုဖျောက်ရန် */
+@media (max-width: 767px) {
+    .stat-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* --- Admin Specific Style (Added Section) --- */
+
+/* Profile Circle */
+.admin-profile-circle {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.admin-section:hover .admin-profile-circle {
+    background-color: #b35900;
+    border-color: #ffcc99;
+    transform: scale(1.05);
+}
+
+/* Dropdown Menu styling */
+.admin-section .dropdown-menu {
+    border-radius: 12px;
+    margin-top: 15px !important;
+    padding: 10px;
+    border: none;
+}
+
+.admin-section .dropdown-item {
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #5d2e00;
+}
+
+.admin-section .dropdown-item:hover {
+    background-color: #fdf5e6;
+    color: #7d3c00;
+}
+
+/* Dropdown Animation */
+.animate { animation-duration: 0.3s; animation-fill-mode: both; }
+@keyframes slideIn {
+    0% { transform: translateY(1rem); opacity: 0; }
+    100% { transform: translateY(0rem); opacity: 1; }
+}
+.slideIn { animation-name: slideIn; }
+
+/* Hide Default Arrow */
+.dropdown-toggle::after { display: none !important; }
+
+/* Mobile View Adjustments */
+@media (max-width: 991px) {
+    .admin-section {
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .admin-profile-circle { margin: 0 auto; }
+}

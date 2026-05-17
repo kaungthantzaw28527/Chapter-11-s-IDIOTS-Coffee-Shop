@@ -1,0 +1,663 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Navbar Section --- */
+.custom-nav {
+    background-color: #7d3c00 !important; /* ပုံထဲက အညိုရောင် */
+    padding: 12px 0;
+    z-index: 1050; /* အခြား element များအပေါ်တွင်ရှိရန် */
+}
+
+.navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+}
+
+.custom-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    padding: 8px 22px !important;
+    margin-left: 5px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+/* Active Link ကို ခလုတ်ပုံစံပြုလုပ်ခြင်း */
+.custom-nav .nav-link.active {
+    background-color: #b35900 !important;
+    border-radius: 10px;
+    color: white !important;
+    font-weight: 500;
+}
+
+.custom-nav .nav-link:hover:not(.active) {
+    color: #ffcc99 !important;
+}
+
+/* General Menu Block Styling */
+/* Background & Layout */
+.menu-block { background-color: #FDF6E3; min-height: 100vh; }
+.menu-main-title { font-family: 'Playfair Display', serif; color: #5D2E00; font-size: 2.8rem; }
+.menu-subtitle { color: #546e7a; font-size: 1rem; }
+.menu-content-width { max-width: 1000px; margin: 0 auto; }
+
+.category-wrapper { display: flex; justify-content: center; width: 100%; }
+.category-bar {
+    background-color: #FFF2D1;
+    border-radius: 50px;
+    width: 90%;
+    max-width: 1000px;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+}
+
+/* Category Buttons */
+.cat-item {
+    background: none;
+    border: none;
+    text-decoration: none;
+    color: #333;
+    padding: 12px 0;
+    flex: 1;
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+/* Active Category Button (Orange) */
+.cat-item.active {
+    background-color: #C05E12 !important;
+    color: white !important;
+    border-radius: 40px;
+    margin: 4px;
+    height: calc(100% - 8px);
+}
+
+/* Content Transitions */
+.tab-pane.fade { transition: opacity 0.2s ease-in-out; }
+
+/* Banner & Heading */
+.banner-section img { width: 100%; max-width: 1000px; height: 350px; object-fit: cover; border-radius: 20px; }
+.category-heading { color: #713101; font-size: 1.8rem; font-weight: 600; }
+
+/* Menu Cards */
+.menu-card { background-color: white; border-radius: 15px; border: none; box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
+.price { color: #C05E12; font-weight: 600; }
+.badge-tag { padding: 3px 12px; border-radius: 4px; font-size: 0.7rem; font-weight: 500; }
+.badge-tag.hot { background-color: #FFEB3B; color: #000; }
+.badge-tag.iced { background-color: #BBDEFB; color: #000; }
+.badge-tag.bread { background-color: #FEF3D2; color: #8D6E63; }
+
+/* --- Menu Item Image Styling (အသစ်ထည့်ရန်) --- */
+.menu-item-img {
+    width: 100px;         /* ပုံရဲ့ အကျယ်ကို ၁၀၀ အသေထားမယ် */
+    height: 100px;        /* အမြင့်ကို ၁၀၀ အသေထားမယ် */
+    min-width: 100px;     /* Flex ကြောင့် ပုံမကျုံ့သွားအောင် ထိန်းမယ် */
+    border-radius: 15px;  /* ပုံလေးကို ထောင့်ချိုးကွေးမယ် */
+    overflow: hidden;     /* ပုံက ဘောင်ကျော်ရင် ဖျောက်မယ် */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; /* ပုံမတက်ခင် ပြမယ့် အရောင် */
+}
+
+.menu-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    /* ပုံမပြဲသွားဘဲ အကွက်ထဲ အံဝင်စေရန် အရေးကြီးဆုံးဖြစ်သည် */
+    transition: transform 0.4s ease;
+}
+
+/* Card ကို Hover တင်ရင် ပုံလေး Zoom ဖြစ်တဲ့ Effect (ပိုလှအောင်) */
+.menu-card:hover .menu-item-img img {
+    transform: scale(1.1);
+}
+
+/* --- လက်ရှိ Menu Card ကို ပိုကောင်းအောင် ပြင်ရန် --- */
+.menu-card {
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.05); /* နည်းနည်းလေး ပေါ်အောင် */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+    display: flex;         /* ပုံနဲ့ စာ ဘေးချင်းယှဉ်ရန် */
+    align-items: center;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(93, 46, 0, 0.08);
+}
+
+/* Badge tags လေးတွေ စာနဲ့ အရမ်းမကပ်အောင် */
+.badge-tag {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 3px 10px;
+}
+
+/* --- Mobile View Responsive (အရေးကြီးဆုံးအပိုင်း) --- */
+@media (max-width: 768px) {
+    .category-bar {
+        width: 100%; /* ဖုန်းမှာ အပြည့်ယူမယ် */
+        border-radius: 0; /* ဖုန်းမှာဆို ဘေးကပ်ရင် ပိုလှလို့ပါ (သို့မဟုတ် 50px ထားနိုင်သည်) */
+        overflow-x: auto; /* ဘေးကို Scroll ဆွဲလို့ရအောင် လုပ်ခြင်း */
+        -webkit-overflow-scrolling: touch; /* iOS မှာ ချောချောမွေ့မွေ့ ဖြစ်အောင် */
+        scrollbar-width: none; /* Firefox မှာ scrollbar ဖျောက်ထားမယ် */
+        justify-content: flex-start; /* ခလုတ်တွေကို ဘယ်ဘက်ကနေ စစီမယ် */
+        padding: 5px;
+    }
+
+    /* Chrome/Safari မှာ scrollbar ဖျောက်ခြင်း */
+    .category-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .cat-item {
+        flex: 0 0 auto; /* Item တွေကို မကျုံ့သွားအောင် */
+        padding: 10px 25px;
+    }
+
+    .cat-item.active {
+        margin: 0 5px; /* ခလုတ်တစ်ခုနဲ့တစ်ခုကြား ခြားထားမယ် */
+        height: auto;
+        padding: 10px 25px;
+    }
+}
+
+
+/*--- Footer Section Styling --- */
+.main-lastblock {
+    background-color: #5d2e00;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.main-lastblock h4, .main-lastblock h5 {
+    font-family: 'Playfair Display', serif;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: #ffcc99;
+    padding-left: 5px;
+}
+
+.main-lastblock hr {
+    border-color: white;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .main-lastblock .row {
+        text-align: center; /* ဖုန်းမှာ စာသားများကို အလယ်ပို့ရန် */
+    }
+    .main-lastblock h5 {
+        margin-top: 20px;
+    }
+}
+
+/* Admin Floating Button Styling */
+.admin-controls-wrapper {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2000;
+}
+
+.btn-admin-main {
+    background-color: #5d2e00; /* ဆိုင်ရဲ့ အညိုရောင် */
+    color: white;
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-weight: 500;
+    border: 2px solid #ffcc99;
+    transition: all 0.3s ease;
+}
+
+.btn-admin-main:hover, .btn-admin-main:focus {
+    background-color: #c05e12;
+    color: white;
+    transform: scale(1.05);
+}
+
+.admin-dropdown-menu {
+    border-radius: 15px;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px !important;
+}
+
+.admin-dropdown-menu .dropdown-item {
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+
+.admin-dropdown-menu .dropdown-item:hover {
+    background-color: #fdf6e3;
+}
+
+.admin-dropdown-menu .dropdown-item i {
+    font-size: 1.1rem;
+}
+
+/* Mobile Screen မှာ ခလုတ်ကို နည်းနည်း သေးလိုက်မယ် */@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* --- Global Styles --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Navbar Section --- */
+.custom-nav {
+    background-color: #7d3c00 !important;
+    padding: 12px 0;
+    z-index: 1050;
+}
+
+.navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+}
+
+.custom-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    padding: 8px 22px !important;
+    margin-left: 5px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.custom-nav .nav-link.active {
+    background-color: #b35900 !important;
+    border-radius: 10px;
+    color: white !important;
+    font-weight: 500;
+}
+
+.custom-nav .nav-link:hover:not(.active) {
+    color: #ffcc99 !important;
+}
+
+/* --- Menu Block Layout --- */
+.menu-block { 
+    background-color: #FDF6E3; 
+    min-height: 100vh; 
+}
+
+.menu-main-title { 
+    font-family: 'Playfair Display', serif; 
+    color: #5D2E00; 
+    font-size: 2.8rem; 
+}
+
+.menu-subtitle { 
+    color: #546e7a; 
+    font-size: 1rem; 
+}
+
+.menu-content-width { 
+    max-width: 1000px; 
+    margin: 0 auto; 
+}
+
+/* --- Category Navigation --- */
+.category-wrapper { 
+    display: flex; 
+    justify-content: center; 
+    width: 100%; 
+}
+
+.category-bar {
+    background-color: #FFF2D1;
+    border-radius: 50px;
+    width: 90%;
+    max-width: 1000px;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+    display: flex;
+}
+
+.cat-item {
+    background: none;
+    border: none;
+    text-decoration: none;
+    color: #333;
+    padding: 12px 0;
+    flex: 1;
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.cat-item.active {
+    background-color: #C05E12 !important;
+    color: white !important;
+    border-radius: 40px;
+    margin: 4px;
+    height: calc(100% - 8px);
+}
+
+.tab-pane.fade { 
+    transition: opacity 0.2s ease-in-out; 
+}
+
+/* --- Banner & Heading --- */
+.banner-section img { 
+    width: 100%; 
+    max-width: 1000px; 
+    height: 350px; 
+    object-fit: cover; 
+    border-radius: 20px; 
+}
+
+.category-heading { 
+    color: #713101; 
+    font-size: 1.8rem; 
+    font-weight: 600; 
+}
+
+/* --- Menu Card & Image --- */
+.menu-card {
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(93, 46, 0, 0.08);
+}
+
+.menu-item-img {
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+}
+
+.menu-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.menu-card:hover .menu-item-img img {
+    transform: scale(1.1);
+}
+
+.price { 
+    color: #C05E12; 
+    font-weight: 600; 
+}
+
+.badge-tag { 
+    display: inline-block;
+    margin-top: 5px;
+    padding: 3px 12px; 
+    border-radius: 4px; 
+    font-size: 0.7rem; 
+    font-weight: 500; 
+}
+
+.badge-tag.hot { background-color: #FFEB3B; color: #000; }
+.badge-tag.iced { background-color: #BBDEFB; color: #000; }
+.badge-tag.bread { background-color: #FEF3D2; color: #8D6E63; }
+
+/* --- Footer Section --- */
+.main-lastblock {
+    background-color: #5d2e00;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 0;
+}
+
+.main-lastblock h4, .main-lastblock h5 {
+    font-family: 'Playfair Display', serif;
+    color: white;
+}
+
+.footer-links li { margin-bottom: 10px; list-style: none; }
+.footer-links a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: #ffcc99;
+    padding-left: 5px;
+}
+
+.main-lastblock hr { border-color: rgba(255,255,255,0.2); }
+
+/* --- Admin Controls --- */
+.admin-controls-wrapper {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2000;
+}
+
+.btn-admin-main {
+    background-color: #5d2e00;
+    color: white;
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-weight: 500;
+    border: 2px solid #ffcc99;
+    transition: all 0.3s ease;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+@media (max-width: 991px) {
+    .menu-main-title { font-size: 2.2rem; }
+    .banner-section img { height: 280px; }
+}
+
+@media (max-width: 768px) {
+    /* Navbar Mobile */
+    .custom-nav .nav-link { margin-left: 0; padding: 10px 15px !important; }
+
+    /* Category Bar Horizontal Scroll */
+    .category-bar {
+        width: 100%;
+        border-radius: 0;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+        padding: 5px;
+    }
+
+    .category-bar::-webkit-scrollbar { display: none; }
+
+    .cat-item {
+        flex: 0 0 auto;
+        padding: 10px 25px;
+    }
+
+    .cat-item.active {
+        margin: 0 5px;
+        height: auto;
+        padding: 10px 25px;
+    }
+
+    /* Banner & Text */
+    .banner-section img { height: 200px; border-radius: 15px; }
+    .menu-main-title { font-size: 1.8rem; }
+    .category-heading { font-size: 1.5rem; text-align: center; }
+
+    /* Menu Card Stacked View */
+    .menu-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .menu-item-img {
+        width: 100%;
+        height: 180px;
+        margin-bottom: 15px;
+    }
+
+    /* Footer Mobile */
+    .main-lastblock { text-align: center; }
+    .main-lastblock .row > div { margin-bottom: 25px; }
+    .footer-links { padding: 0; }
+
+    /* Floating Button Adjustment */
+    .admin-controls-wrapper { bottom: 20px; right: 20px; }
+    .btn-admin-main { padding: 10px 18px; font-size: 0.9rem; }
+}
+
+@media (max-width: 480px) {
+    .menu-main-title { font-size: 1.5rem; }
+    .menu-subtitle { font-size: 0.9rem; }
+    .custom-nav .navbar-brand { font-size: 1.1rem; }
+}
+@media (max-width: 768px) {
+    .admin-controls-wrapper {
+        bottom: 20px;
+        right: 20px;
+    }
+    .btn-admin-main {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+}
+
+/* --- Admin Specific Style (Added Section) --- */
+
+/* Profile Circle */
+.admin-profile-circle {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.admin-section:hover .admin-profile-circle {
+    background-color: #b35900;
+    border-color: #ffcc99;
+    transform: scale(1.05);
+}
+
+/* Dropdown Menu styling */
+.admin-section .dropdown-menu {
+    border-radius: 12px;
+    margin-top: 15px !important;
+    padding: 10px;
+    border: none;
+}
+
+.admin-section .dropdown-item {
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #5d2e00;
+}
+
+.admin-section .dropdown-item:hover {
+    background-color: #fdf5e6;
+    color: #7d3c00;
+}
+
+/* Dropdown Animation */
+.animate { animation-duration: 0.3s; animation-fill-mode: both; }
+@keyframes slideIn {
+    0% { transform: translateY(1rem); opacity: 0; }
+    100% { transform: translateY(0rem); opacity: 1; }
+}
+.slideIn { animation-name: slideIn; }
+
+/* Hide Default Arrow */
+.dropdown-toggle::after { display: none !important; }
+
+/* Mobile View Adjustments */
+@media (max-width: 991px) {
+    .admin-section {
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .admin-profile-circle { margin: 0 auto; }
+}
+
+/* Modal Custom Design */
+#addItemModal .modal-content {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+}
+#addItemModal .modal-header {
+    background-color: #b35900 !important; /* သင်ပြောတဲ့ Title Bar အရောင် */
+    border-bottom: none;
+}
+#addItemModal .modal-body {
+    background-color: #ffcc99 !important; /* သင်ပြောတဲ့ Body အရောင် */
+}
+#addItemModal .form-label {
+    color: #5d2e00; 
+    font-weight: 600;
+}
+#addItemModal .form-control, #addItemModal .form-select {
+    border: 1px solid #b35900;
+    border-radius: 6px;
+}
+#addItemModal .btn-save {
+    background-color: #b35900 !important; /* သင်ပြောတဲ့ Button အရောင် */
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 10px;
+}
+#addItemModal .btn-save:hover {
+    background-color: #8c4600 !important;
+}
+
+

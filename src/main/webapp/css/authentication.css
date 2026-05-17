@@ -1,0 +1,135 @@
+/* Custom Variables */
+:root {
+    --brand-color: #7d3c00;
+    --btn-gradient: linear-gradient(135deg, #ff7e00, #7d3c00);
+    --glass-bg: rgba(15, 10, 5, 0.6);
+    --text-white: #f8f1e5;
+    --text-muted: rgba(248, 241, 229, 0.6);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--text-white);
+}
+
+.login-wrapper {
+    width: 100%;
+    max-width: 440px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Glassmorphism Effect */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    padding: 50px 40px;
+    width: 100%;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+}
+
+/* --- Fingerprint Size Fix --- */
+.icon-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.fingerprint-box {
+    background: var(--btn-gradient);
+    padding: 15px;
+    border-radius: 22px;
+    box-shadow: 0 10px 25px rgba(125, 60, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#finger-img {
+    width: 45px; /* ပုံကြီးမထွက်လာအောင် ဤနေရာတွင် ထိန်းထားသည် */
+    height: 45px;
+    object-fit: contain;
+}
+
+/* Input Fields */
+.form-label-custom {
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.input-container {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    padding: 6px 18px;
+    transition: 0.3s;
+}
+
+.input-container:focus-within {
+    border-color: var(--brand-color);
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.form-control-custom {
+    background: transparent !important;
+    border: none;
+    color: white !important;
+    width: 100%;
+    padding: 12px 10px;
+    outline: none;
+}
+
+/* --- Sign In Button Link Styling --- */
+.btn-signin-link {
+    text-decoration: none !important; /* Link မျဉ်းတားဖျောက်ရန် */
+    display: block;
+    margin-top: 10px;
+}
+
+.btn-signin {
+    background: var(--btn-gradient);
+    color: white;
+    border-radius: 20px;
+    padding: 16px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.05rem;
+    box-shadow: 0 10px 30px rgba(255, 126, 0, 0.4);
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-signin:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.15);
+    box-shadow: 0 15px 40px rgba(255, 126, 0, 0.6);
+}
+
+.btn-signin:active {
+    transform: scale(0.96);
+}
+
+/* Typography & Others */
+.admin-title { font-size: 2.2rem; font-weight: 700; }
+.admin-subtitle { color: var(--text-muted); font-size: 0.85rem; }
+.forgot-link, .support-link { color: #ffca28; text-decoration: none; transition: 0.3s; }
+.forgot-link:hover { color: white; }
+.footer-copyright { margin-top: 40px; font-size: 0.8rem; color: rgba(255,255,255,0.2); }

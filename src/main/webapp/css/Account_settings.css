@@ -1,0 +1,92 @@
+/* ===== Page Background ===== */
+.settings-page {
+    background-color: #f5efe6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== Navbar ===== */
+.custom-nav {
+    background-color: #7a3e00;
+}
+
+.navbar-brand {
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+/* ===== Title ===== */
+.settings-title {
+    font-weight: 700;
+    color: #6b3a00;
+}
+
+/* ===== Card Design ===== */
+.settings-card {
+    border-radius: 16px;
+    background-color: #ffffff;
+    transition: 0.3s;
+}
+
+.settings-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Card Subtitle ===== */
+.card-subtitle {
+    color: #7a3e00;
+    font-size: 1.1rem;
+}
+
+/* ===== Form Fields ===== */
+.form-control {
+    border-radius: 10px;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    transition: 0.2s;
+}
+
+.form-control:focus {
+    border-color: #d17b00;
+    box-shadow: 0 0 0 2px rgba(209, 123, 0, 0.15);
+}
+
+/* ===== Readonly Field ===== */
+.readonly-field {
+    background-color: #f1f1f1;
+    cursor: not-allowed;
+}
+
+/* ===== Labels ===== */
+.form-label {
+    color: #444;
+}
+
+/* ===== Divider ===== */
+hr {
+    border-top: 1px solid #eee;
+}
+
+/* ===== Buttons ===== */
+.btn-save {
+    background-color: #d17b00;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-save:hover {
+    background-color: #b96600;
+    color: #fff;
+}
+
+/* ===== Alert Messages ===== */
+.alert {
+    border: none;
+    font-size: 0.9rem;
+}
+
+/* ===== Footer Text ===== */
+.text-muted {
+    color: #888 !important;
+}
