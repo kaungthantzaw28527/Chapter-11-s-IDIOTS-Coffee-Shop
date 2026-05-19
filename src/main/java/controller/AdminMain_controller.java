@@ -15,11 +15,11 @@ public class AdminMain_controller extends HttpServlet {
         // Database နဲ့ ချိတ်ပြီး Data ယူမယ်
         DashboardDAO dao = new DashboardDAO(DBUtil.getConnection());
         
-        int totalBooks = dao.getTotalBooks();
+//        int totalBooks = dao.getTotalBooks();
         int totalMenu = dao.getTotalMenu();
         
         // JSP ဆီကို Data ပို့မယ်
-        request.setAttribute("totalBooks", totalBooks);
+//        request.setAttribute("totalBooks", totalBooks);
         request.setAttribute("totalMenu", totalMenu);
         
         // Admin Page ကို တန်းပို့မယ်

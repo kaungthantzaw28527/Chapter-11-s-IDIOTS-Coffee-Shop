@@ -123,19 +123,20 @@
                 </div>
             </div>
             
-            <div class="stats-banner p-5 text-white shadow-lg mt-5">
-                <div class="row">
-                    <div class="col-md-4 stat-item">
+			<div class="stats-banner p-5 text-white shadow-lg mt-5">
+               <div class="row justify-content-center text-center">
+<%--                     <div class="col-md-4 stat-item">
                         <h2 class="fw-bold display-5">500+</h2>
                         <p class="mb-0 text-warning">Happy Customers Daily</p>
                     </div>
                     <div class="col-md-4 stat-item">
                         <h2 class="fw-bold display-5">${totalBooks}+</h2>
                         <p class="mb-0 text-warning">Books in Library</p>
-                    </div>
-                    <div class="col-md-4">
-                        <h2 class="fw-bold display-5">${totalMenu}+</h2>
-                        <p class="mb-0 text-warning">Menu Items</p>
+                    </div> --%>
+                    
+                    <div class="col-md-6">
+                        <h2 class="fw-bold display-4 text-white">${totalMenu}+</h2>
+                        <p class="mb-0 text-warning fs-5">Menu Items</p>
                     </div>
                 </div>
             </div>
