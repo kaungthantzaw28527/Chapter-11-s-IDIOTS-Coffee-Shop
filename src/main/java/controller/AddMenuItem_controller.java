@@ -42,6 +42,7 @@ public class AddMenuItem_controller extends HttpServlet {
             String dbImagePath = "IMG/" + fileName;
             
             String uploadPath = request.getServletContext().getRealPath("") + File.separator + "IMG";
+            System.out.println("UPLOAD PATH = " + uploadPath);
             File uploadDir = new File(uploadPath);
             if (!uploadDir.exists()) {
                 uploadDir.mkdir();
