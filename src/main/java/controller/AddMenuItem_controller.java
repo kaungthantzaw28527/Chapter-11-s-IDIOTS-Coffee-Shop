@@ -36,28 +36,22 @@ public class AddMenuItem_controller extends HttpServlet {
             String categoryIdStr = request.getParameter("category_id");
             String description = request.getParameter("description");
             
-            // ၂။ ရွေးချယ်လိုက်သော ပုံဖိုင်ကို လက်ခံခြင်း
             Part filePart = request.getPart("image_file");
             String fileName = getFileName(filePart);
             
-            // Database ထဲမှာ 'IMG/ပုံနာမည်.jpg' လို့ သိမ်းဖို့ လမ်းကြောင်း
             String dbImagePath = "IMG/" + fileName;
             
-            // Webapp အောက်က IMG Folder ရဲ့ လမ်းကြောင်းအစစ်ကို ရှာဖွေခြင်း
             String uploadPath = request.getServletContext().getRealPath("") + File.separator + "IMG";
             File uploadDir = new File(uploadPath);
             if (!uploadDir.exists()) {
                 uploadDir.mkdir();
             }
             
-            // ၃။ ပုံကို webapp/IMG ထဲသို့ Copy ကူးထည့်ခြင်း
             File fileToSave = new File(uploadPath + File.separator + fileName);
             try (InputStream input = filePart.getInputStream()) {
                 Files.copy(input, fileToSave.toPath(), StandardCopyOption.REPLACE_EXISTING);
             }
             
-            // ၄။ မင်းရဲ့ DBUtil ကို သုံးပြီး Database ထဲသို့ Data များ ထည့်သွင်းသိမ်းဆည်းခြင်း
-            // ⚠️ မင်းရဲ့ DBUtil ထဲက connection ခေါ်တဲ့ method နာမည်အတိုင်း ပြင်ပေးပါ (ဥပမာ- DBUtil.getConnection() သို့မဟုတ် DBUtil.getConn())
             try (Connection conn = DBUtil.getConnection();
                  PreparedStatement pt = conn.prepareStatement("INSERT INTO menu_items (name, price, category_id, description, image_url) VALUES (?, ?, ?, ?, ?)")) {
                 
@@ -65,7 +59,7 @@ public class AddMenuItem_controller extends HttpServlet {
                 pt.setDouble(2, Double.parseDouble(priceStr));
                 pt.setInt(3, Integer.parseInt(categoryIdStr));
                 pt.setString(4, description);
-                pt.setString(5, dbImagePath); // 'IMG/filename.jpg' အတိုင်း တည့်တည့်ဝင်သွားမယ်
+                pt.setString(5, dbImagePath);
                 
                 pt.executeUpdate();
                 System.out.println(">>> [SUCCESS] Item added via DBUtil: " + name);
@@ -76,11 +70,10 @@ public class AddMenuItem_controller extends HttpServlet {
             e.printStackTrace();
         }
         
-        // အားလုံးပြီးရင် မူရင်း Menu စာမျက်နှာဆီ Redirect ပြန်လုပ်ပေးပါမယ်
         response.sendRedirect(request.getContextPath() + "/admin-menu");
     }
 
-    // မူရင်း ဖိုင်နာမည် သီးသန့်ကိုသာ ဖြတ်ထုတ်ယူသည့်အပိုင်း
+
     private String getFileName(Part part) {
         String contentDisp = part.getHeader("content-disposition");
         String[] tokens = contentDisp.split(";");
