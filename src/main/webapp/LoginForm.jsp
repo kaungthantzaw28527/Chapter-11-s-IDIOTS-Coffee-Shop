@@ -84,34 +84,29 @@
     <script src="${pageContext.request.contextPath}/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // Controller ဘက်က လှမ်းပို့လိုက်မယ့် remainingSeconds ကို ဖမ်းယူမယ်
         let seconds = ${remainingSeconds != null ? remainingSeconds : 0};
 
         if (seconds > 0) {
             const btn = document.getElementById("loginBtn");
             const alertDiv = document.getElementById("errorAlert");
             
-            // 1. bootstrap class d-none (hidden) ကို ဖယ်ပြီး alert box ကို ပြပေးမယ်
             alertDiv.classList.remove("d-none");
             
-            // 2. Sign In ခလုတ်ကို နှိပ်လို့မရအောင် ပိတ်ထားမယ်
             btn.disabled = true;
-            btn.style.opacity = "0.5"; // ပိတ်ထားကြောင်း သိသာစေရန် မှိန်ပြခြင်း
+            btn.style.opacity = "0.5";
             btn.style.cursor = "not-allowed";
 
-            // 3. ၁ စက္ကန့်ချင်းစီ နှုတ်ပြီး Countdown ပြမည့် Timer
             const counter = setInterval(() => {
                 seconds--;
                 alertDiv.innerText = `Too many failed attempts. Please wait ${seconds} seconds.`;
                 
-                // စက္ကန့် ၀ ရောက်သွားရင် ခလုတ်ပြန်ဖွင့်ပေးပြီး Timer ကို ရပ်မယ်
                 if (seconds <= 0) {
                     clearInterval(counter);
                     btn.disabled = false;
                     btn.style.opacity = "1";
                     btn.style.cursor = "pointer";
                     alertDiv.innerText = "";
-                    alertDiv.classList.add("d-none"); // alert box ကို ပြန်ဖျောက်မယ်
+                    alertDiv.classList.add("d-none");
                 }
             }, 1000);
         }

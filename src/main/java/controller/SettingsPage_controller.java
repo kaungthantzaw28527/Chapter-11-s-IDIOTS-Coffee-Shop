@@ -22,7 +22,6 @@ public class SettingsPage_controller extends HttpServlet {
         HttpSession session = request.getSession(false);
         String servletPath = request.getServletPath();
 
-        // ၁။ Login မဝင်ရသေးရင် မောင်းထုတ်မည်
         if (session == null || session.getAttribute("email") == null || session.getAttribute("userRole") == null) {
             session = request.getSession(true);
             session.setAttribute("errorMessage", "Please Login");
@@ -43,7 +42,6 @@ public class SettingsPage_controller extends HttpServlet {
             return;
         }
 
-        // ၃။ အားလုံး ကိုက်ညီပါက ကာစတမ် ဖိုင်ဆီသို့ Forward လုပ်ပေးသည်
         request.getRequestDispatcher("/Account_setting.jsp").forward(request, response);
     }
 }

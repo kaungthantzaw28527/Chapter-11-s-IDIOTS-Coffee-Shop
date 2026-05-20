@@ -9,7 +9,6 @@ import util.DBUtil;
 
 public class UserDAO {
 
-    // ၁။ Login အတွက် အီးမေးလ် သို့မဟုတ် Username နှင့် Password တိုက်စစ်သည့် Method
     public User authenticateUser(String usernameOrEmail, String password) {
         User user = null;
         String query = "SELECT * FROM users WHERE (email = ? OR name = ?) AND password = ?";
@@ -37,7 +36,6 @@ public class UserDAO {
         return user;
     }
 
-    // ၂။ Sign Up အတွက် အီးမေးလ် ရှိပြီးသားဖြစ်မဖြစ် စစ်ဆေးသည့် Method
     public boolean isEmailExists(String email) {
         String query = "SELECT id FROM users WHERE email = ?";
         
@@ -54,7 +52,6 @@ public class UserDAO {
         return false;
     }
 
-    // ၃။ အသုံးပြုသူအသစ်အား Database ထဲသို့ ထည့်သွင်းပေးသည့် Method
     public boolean registerUser(User user) {
         String query = "INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, 'CUSTOMER')";
         
@@ -74,7 +71,6 @@ public class UserDAO {
         return false;
     }
     
-    // ၄။ အီးမေးလ်အလိုက် User ရဲ့ Password အစစ်ကို DB ထဲကနေ ဆွဲထုတ်ရန်
     public String getPasswordByEmail(String email) {
         String password = null;
         String query = "SELECT password FROM users WHERE email = ?";
@@ -94,7 +90,6 @@ public class UserDAO {
         return password;
     }
 
-    // ၅။ User / Admin ရဲ့ Email အသစ်ကို Update လုပ်ပေးရန်
     public boolean updateEmail(String oldEmail, String newEmail) {
         String query = "UPDATE users SET email = ? WHERE email = ?";
         boolean rowUpdated = false;
@@ -112,7 +107,6 @@ public class UserDAO {
         return rowUpdated;
     }
 
-    // ၆။ User / Admin ရဲ့ Password အသစ်ကို Update လုပ်ပေးရန်
     public boolean updatePassword(String email, String newPassword) {
         String query = "UPDATE users SET password = ? WHERE email = ?";
         boolean rowUpdated = false;
