@@ -26,7 +26,7 @@
             </div>
 
             <div class="text-center mb-4">
-                <h1 class="admin-title">Admin Portal</h1>
+                <h1 class="admin-title">Portal</h1>
                 <p class="admin-subtitle">Welcome to your premium workspace</p>
             </div>
 
